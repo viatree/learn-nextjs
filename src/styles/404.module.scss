@@ -1,0 +1,15 @@
+.error {
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #6c63ff;
+    font-size: 2rem;
+    &_image {
+        // fitur scss untuk penamaan sama saja dengan error_image
+        width: 50%;
+        height: 300px;
+    }
+}

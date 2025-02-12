@@ -1,4 +1,4 @@
-import LoginViews from "@/view/auth/login";
+import LoginViews from "@/views/auth/login";
 /**
  * LoginPage component
  * Renders the login view

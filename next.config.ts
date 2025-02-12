@@ -6,13 +6,13 @@ const nextConfig: NextConfig = {
 };
 // next.config.js
 module.exports = {
-  // ...
-  css: {
-    loaderOptions: {
-      css: {
-        modules: true,
-      },
-    },
+  module: {
+      rules: [
+          {
+              test: /\.scss$/,
+              use: ['style-loader', 'css-loader', 'sass-loader'],
+          },
+      ],
   },
 };
 export default nextConfig;
