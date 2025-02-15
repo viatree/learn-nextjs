@@ -16,7 +16,7 @@ const LoginViews = () => {
             <p style={{color: "red", border: "1px solid red", borderRadius: "10px"}}>
                 {/* sudah menjadi syntax jsx bukan sebagai style inline di html */}
                 Belum punya akun? silahkan <Link href="/auth/register">Register</Link>   
-                 {/*pada react router props yang digunakan adalah to tetapi pada next link props digunakan href  */}
+                {/*pada react router props yang digunakan adalah to tetapi pada next link props digunakan href  */}
             </p>
             
         </div>
