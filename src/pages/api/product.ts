@@ -5,7 +5,8 @@ import type { NextApiRequest, NextApiResponse } from "next";
 type Data = {
     status:boolean,
     statusCode: number,
-    data: unknown,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    data: any,
     // {
     //     id:number;
     //     name:string;
@@ -45,7 +46,8 @@ export default async function handler(
     //     },
 
     // ]
-    res.status(200).json({ status:true, statusCode:200,data });
+    res.status(200).json({ status: true, statusCode: 200, data: data });
+    // res.status(200).json({ status:true, statusCode:200,data });
     // res.status akan mengirimkan respon 200 yang artinya success dan data berupa json
     // status dalam object serta status code merupakan standarisasi 
 }

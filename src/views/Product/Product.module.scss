@@ -1,0 +1,31 @@
+.product {
+    width: 100%;
+    padding: 0 5%;
+    &_title {
+        text-align: center;
+        font-size: 32px;
+        font-weight: bold;
+    }
+    &_content{
+        display: flex;
+        &_item {
+        width: 38%;
+        padding: 10px;
+        &_name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 5px;
+            // padding: 5px;
+        }
+        &_category {
+            color: grey;
+            margin-top: 5px;
+    }
+    &_price {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px ;
+    }
+        }
+    }
+}

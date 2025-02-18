@@ -1,17 +1,13 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import ProductView from "@/views/Product/index";
 
-type productType = {
-    id: number;
-    name: string;
-    price: number;
-    size: string;
-};
 
 const ProductPage = () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [isLogin, setIsLogin] = useState(true);
     const [products, setProducts] = useState([]);
+    console.log(products);
     // ([]) dibuat array kodong untuk default value
     const { push } = useRouter();
     useEffect(() => {
@@ -29,18 +25,9 @@ const ProductPage = () => {
             });
     }, []);
     return (
-        <div>
-            <h1> Product Page </h1>
-            {products.map((product: productType) => {
-                return (
-                    <div key={product.id}>
-                        <h2>{product.name}</h2>
-                        <p>{product.price}</p>
-                        <p>{product.size}</p>
-                    </div>
-                );
-            })}
-        </div>
+      <div>
+        <ProductView products={products}/>
+      </div>
     );
 };
 
