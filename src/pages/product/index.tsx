@@ -5,8 +5,6 @@ import { useEffect, useState } from "react";
 import ProductView from "@/views/Product/index";
 import useSWR from "swr";
 
-
-
 const ProductPage = () => {
      
     const [isLogin, setIsLogin] = useState(true);

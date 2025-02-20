@@ -1,14 +1,5 @@
 import styles from "./Product.module.scss";
-
-type ProductType = {
-    id: number;
-    name: string;
-    price: number;
-    size: string;
-    image: string;
-    category: string;
-};
-
+import { ProductType } from "@/types/product.type";
 /**
  * Renders a list of products in a grid layout
  * @param {ProductType[]} products - An array of product objects
