@@ -15,26 +15,26 @@ const ProductView = ({ products }: { products: ProductType[] }) => {
             <div className={styles.product_content}>
                 {products.length > 0 ? (
                     <>
-             {/* conditional rendering: ketika data nya ada menampilkan data nya */}
-                {products.map((product : ProductType) => (
-                    <Link href={`/product/${product.id}`} key={product.id} className={styles.product_content_item}>
-                        <div className={styles.product_content_item_image}>
-                            <img src={product.image} alt={product.name} />
-                        </div>
-                        <h4 className={styles.product_content_item_name}>{product.name}</h4>
-                        <p className={styles.product_content_item_category}>{product.category}</p>
-                        <p className={styles.product_content_item_price}>${product.price.toLocaleString("en-US")}</p>
-                        {/* menambahkan format currency */}
-                    </Link>
-                ))}
+                        {/* conditional rendering: ketika data nya ada menampilkan data nya */}
+                        {products.map((product: ProductType) => (
+                            <Link href={`/product/${product.id}`} key={product.id} className={styles.product_content_item}>
+                                <div className={styles.product_content_item_image}>
+                                    <img src={product.image} alt={product.name} />
+                                </div>
+                                <h4 className={styles.product_content_item_name}>{product.name}</h4>
+                                <p className={styles.product_content_item_category}>{product.category}</p>
+                                <p className={styles.product_content_item_price}>${product.price.toLocaleString("en-US")}</p>
+                                {/* menambahkan format currency */}
+                            </Link>
+                        ))}
                     </>
-                ):(
-                    <div className={styles.product_content_skeleton}>    
-                      <div className={styles.product_content_skeleton_image}></div>
-                      <div className={styles.product_content_skeleton_name}></div>    
-                      <div className={styles.product_content_skeleton_category}></div>    
-                      <div className={styles.product_content_skeleton_price}></div>    
-                  </div>
+                ) : (
+                    <div className={styles.product_content_skeleton}>
+                        <div className={styles.product_content_skeleton_image}></div>
+                        <div className={styles.product_content_skeleton_name}></div>
+                        <div className={styles.product_content_skeleton_category}></div>
+                        <div className={styles.product_content_skeleton_price}></div>
+                    </div>
                 )}
                 {/* contoh penambahan skeleton loading */}
             </div>
