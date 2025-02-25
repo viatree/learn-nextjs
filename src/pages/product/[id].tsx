@@ -12,11 +12,15 @@
 // }
 
 // export default DetailProductPage
-
+import useSWR from "swr";
+import { fetcher } from "@/utils/db/swr";
 import { useRouter } from "next/router"
 // mengambil fitur router secara dinamis
 const DetailProductPage = () => {
     const {query} = useRouter();
+
+    const { data, error, isLoading } = useSWR(
+        `/api/product/${query.product}`,fetcher);
     return (
         <div>
             <h1>Detail Product </h1>

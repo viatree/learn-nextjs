@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { retrieveData } from "@/utils/db/services";
+import { retrieveData, retrieveDataById } from "@/utils/db/services";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
@@ -29,7 +29,11 @@ export default async function handler(
     res: NextApiResponse<Data>,
     // sebuah data yang di definisikan jika menggunakan TS
 ) {
-    const data = await retrieveData("products");
+    if (req.query.product![1]) {
+        const data = await retrieveDataById("products", req.query.product![1]);
+        res.status(200).json({ status: true, statusCode: 200, data: data });
+    } else {
+        const data = await retrieveData("products");
     console.log(data);
     // [
     //     {
@@ -51,3 +55,6 @@ export default async function handler(
     // res.status akan mengirimkan respon 200 yang artinya success dan data berupa json
     // status dalam object serta status code merupakan standarisasi 
 }
+    }
+    // console.log(req.query.product);
+    

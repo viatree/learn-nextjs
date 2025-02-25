@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./Product.module.scss";
 import { ProductType } from "@/types/product.type";
 /**
@@ -16,7 +17,7 @@ const ProductView = ({ products }: { products: ProductType[] }) => {
                     <>
              {/* conditional rendering: ketika data nya ada menampilkan data nya */}
                 {products.map((product : ProductType) => (
-                    <div key={product.id} className={styles.product_content_item}>
+                    <Link href={`/product/${product.id}`} key={product.id} className={styles.product_content_item}>
                         <div className={styles.product_content_item_image}>
                             <img src={product.image} alt={product.name} />
                         </div>
@@ -24,7 +25,7 @@ const ProductView = ({ products }: { products: ProductType[] }) => {
                         <p className={styles.product_content_item_category}>{product.category}</p>
                         <p className={styles.product_content_item_price}>${product.price.toLocaleString("en-US")}</p>
                         {/* menambahkan format currency */}
-                    </div>
+                    </Link>
                 ))}
                     </>
                 ):(
