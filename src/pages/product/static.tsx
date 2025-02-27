@@ -20,7 +20,12 @@ export async function getStaticProps() {
     return{
         props: {
             products: response.data
-        }
+        },
+        // trigger regenerate page, jadi ketika membuka halaman akan memeriksa data di API apakah API nya berbeda dengan data yang di catch jika berbeda maka akan di revalidate.
+        // revalidate: 10, 
+        // ketika 10 detik next.js akan melakukan regeneration / memperbaharui data yang di catch
+        // menghapus catch dari data yang sebelumnya dengan data yang baru 
+
     }
 }
 // kalau kita tidak mengambil data / fetch data dari api secara default next.js akan menagnggap fetch sebagai static site generation atau static page generation.

@@ -7,6 +7,7 @@
         font-weight: bold;
     }
     &_content{
+        justify-content: space-around;    
         display: flex;
         &_skeleton {
             width: 25%;
