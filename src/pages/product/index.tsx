@@ -7,17 +7,22 @@ import useSWR from "swr";
 
 const ProductPage = () => {
      
-    const [isLogin, setIsLogin] = useState(true);
-    // const [products, setProducts] = useState([]);
+    // const [isLogin, setIsLogin] = useState(true);
+    const [products, setProducts] = useState([]);
     // console.log(products);
     // ([]) dibuat array kosong untuk default value
     const { push } = useRouter();
 
-    useEffect(() => {
-        if (!isLogin) {
-            push("/auth/login");
-        }
-    }, []);
+    // jika redirect menggunakan useeffect akan mengglitch halaman
+    // useEffect(() => {  
+    //   push("/");
+    // }, []);
+
+    // useEffect(() => {
+    //     if (!isLogin) {
+    //         push("/auth/login");
+    //     }
+    // }, []);
 
     const { data, error, isLoading } = useSWR(
         "/api/product",fetcher);
